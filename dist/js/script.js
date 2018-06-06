@@ -102,12 +102,11 @@ let random;
 let limit;
 $(window).width() > 739 ? limit = 6 : limit = 3;
 
-let flyAnim = setInterval(function () {
+document.getElementsByTagName("body")[0].addEventListener("click", function(){let flyAnim = setInterval(function () {
   if (trianglesArray.length === 0) {
     clearInterval(flyAnim);
   };
   console.log(+new Date()); // do usuniecia
-
 
   for (let i = 0; i <= limit; i++) {
     random = Math.floor(Math.random() * trianglesArray.length);
@@ -117,7 +116,24 @@ let flyAnim = setInterval(function () {
     }
 
   };
-}, 10);
+}, 10)});
+
+// let flyAnim = setInterval(function () {
+//   if (trianglesArray.length === 0) {
+//     clearInterval(flyAnim);
+//   };
+//   console.log(+new Date()); // do usuniecia
+
+
+//   for (let i = 0; i <= limit; i++) {
+//     random = Math.floor(Math.random() * trianglesArray.length);
+//     if (trianglesArray.length > 0) {
+//       trianglesArray[random].classList.add("animate");
+//       trianglesArray.splice(random, 1);
+//     }
+
+//   };
+// }, 10);
 
 
 
